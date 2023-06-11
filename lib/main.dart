@@ -29,7 +29,7 @@ class Form extends StatefulWidget {
 class _FormState extends State<Form> {
   TextEditingController _name = TextEditingController();
   TextEditingController _email = TextEditingController();
-  TextEditingController _phone = TextEditingController();
+  //TextEditingController _phone = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,6 +37,10 @@ class _FormState extends State<Form> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Padding(
+                padding: const EdgeInsets.only(bottom: 10.0),
+              child: Image.asset('assets/images/Logo Royal - Color-2.png', scale: 1.5,),
+            ),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: TextField(
@@ -57,31 +61,40 @@ class _FormState extends State<Form> {
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: TextField(
-                controller: _phone,
-                decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'Enter your Phone No'
+            // Padding(
+            //   padding: const EdgeInsets.all(8.0),
+            //   child: TextField(
+            //     controller: _phone,
+            //     decoration: InputDecoration(
+            //         border: OutlineInputBorder(),
+            //         labelText: 'Enter your Phone No'
+            //     ),
+            //   ),
+            // ),
+            SizedBox(
+              width: 150,
+            child: ElevatedButton(onPressed: (){
+              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>WelcomePage(name: _name.text, email: _email.text)));
+            },
+                style: ElevatedButton.styleFrom(
+
+                  primary: Colors.black,
+                  shape: RoundedRectangleBorder(
+                     borderRadius: BorderRadius.circular(20.0)
+                  )
                 ),
-              ),
-            ),
-            ElevatedButton(onPressed: (){
-
-              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>WelcomePage(name: _name.text, email: _email.text, phone: _phone.text)));
-
-            }, child: Text('Go Next Page'))
+                child: Text('Submit'))
+            )
           ],
+              )
         ),
-      ),
-    );
+      );
   }
 }
 
 class WelcomePage extends StatelessWidget {
-  String name,email,phone;
-  WelcomePage({Key? key,required this.name,required this.email,required this.phone}) : super(key: key);
+  String name,email;
+  WelcomePage({Key? key,required this.name,required this.email}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -95,7 +108,7 @@ class WelcomePage extends StatelessWidget {
             children: [
               Text('Name: $name'),
               Text('Email: $email'),
-              Text('Phone: $phone'),
+              //Text('Phone: $phone'),
             ],
           ),
         ),
