@@ -1,3 +1,4 @@
+import 'package:contacts_login/detail1.dart';
 import 'package:flutter/material.dart';
 
 
@@ -41,7 +42,7 @@ class _FormState extends State<Form> {
               padding: const EdgeInsets.all(8.0),
               child: TextField(
                 controller: _name,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: 'Enter your Name'
                 ),
@@ -51,7 +52,7 @@ class _FormState extends State<Form> {
               padding: const EdgeInsets.all(8.0),
               child: TextField(
                 controller: _email,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: 'Enter your Email'
                 ),
@@ -69,7 +70,7 @@ class _FormState extends State<Form> {
             ),
             ElevatedButton(onPressed: (){
 
-              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>WelcomePage(name: _name.text, email: _email.text, phone: _phone.text)));
+              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Detail1(name:'hotel')));
 
             }, child: Text('Go Next Page'))
           ],
