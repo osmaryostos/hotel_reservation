@@ -191,7 +191,8 @@ class MyHomePage extends StatelessWidget {
              ])
             ],
           ),
-         ProgressBar(), ],
+        //  ProgressBar(),
+        ],
         ),
       ),
     );
@@ -199,7 +200,7 @@ class MyHomePage extends StatelessWidget {
 
 }
 
-class MyWidgetRating extends StatelessWidget {
+class MyWidgetRating  extends StatelessWidget {
   const MyWidgetRating({super.key});
 
   @override
@@ -218,49 +219,49 @@ class MyWidgetRating extends StatelessWidget {
   } 
 }
 
-class ProgressBar extends StatefulWidget {
-  @override
-  State<StatefulWidget> createState() {
-    return _ProgressState();
-  }
-}
+// class ProgressBar extends StatefulWidget {
+//   @override
+//   State<StatefulWidget> createState() {
+//     return _ProgressState();
+//   }
+// }
 
-class _ProgressState extends State<ProgressBar> {
-  int _count = 50;
+// class _ProgressState extends State<ProgressBar> {
+//   int _count = 50;
 
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        Container(
-            padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-            decoration: BoxDecoration(
-                color: Color.fromARGB(255, 192, 178, 178),
-                borderRadius: BorderRadius.circular(10)),
-            child: Row(children: <Widget>[
-              IconButton(
-                icon: const Icon(Icons.add),
-                onPressed: () {
-                  setState(() {
-                    _count += 1;
-                  });
-                },
-              ),
-              Text(_count.toString()),
-              IconButton(
-                icon: const Icon(Icons.remove),
-                onPressed: () {
-                  setState(() {
-                    _count -= 1;
-                  });
-                },
-              ),
-            ])),
-      ],
-    );
-  }
-  }
+//   @override
+//   Widget build(BuildContext context) {
+//     return Row(
+//       mainAxisAlignment: MainAxisAlignment.center,
+//       children: <Widget>[
+//         Container(
+//             padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+//             decoration: BoxDecoration(
+//                 color: Color.fromARGB(255, 192, 178, 178),
+//                 borderRadius: BorderRadius.circular(10)),
+//             child: Row(children: <Widget>[
+//               IconButton(
+//                 icon: const Icon(Icons.add),
+//                 onPressed: () {
+//                   setState(() {
+//                     _count += 1;
+//                   });
+//                 },
+//               ),
+//               Text(_count.toString()),
+//               IconButton(
+//                 icon: const Icon(Icons.remove),
+//                 onPressed: () {
+//                   setState(() {
+//                     _count -= 1;
+//                   });
+//                 },
+//               ),
+//             ])),
+//       ],
+//     );
+//   }
+//   }
 
 
 

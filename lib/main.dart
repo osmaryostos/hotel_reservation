@@ -1,4 +1,4 @@
-import 'package:contacts_login/detail1.dart';
+import 'package:contacts_login/checkout.dart';
 import 'package:flutter/material.dart';
 
 
@@ -70,7 +70,7 @@ class _FormState extends State<Form> {
             ),
             ElevatedButton(onPressed: (){
 
-              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Detail1(name:'hotel')));
+              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Detail1(name:'hotel1')));
 
             }, child: Text('Go Next Page'))
           ],
