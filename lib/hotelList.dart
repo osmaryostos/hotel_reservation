@@ -46,6 +46,9 @@ class HotelList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+        fontFamily: 'Cinzel',
+      ),
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.black,
