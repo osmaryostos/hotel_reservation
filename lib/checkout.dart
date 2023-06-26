@@ -1,6 +1,5 @@
 import 'package:contacts_login/main.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 void main() {
   runApp(Detail1(name:''));
