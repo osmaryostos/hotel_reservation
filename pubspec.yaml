@@ -64,6 +64,11 @@ flutter:
   - images/logobar.png
   - images/hotel1.png
   - images/hotel2.png
+  - images/logback.jpg
+  - images/grandroyal.png
+  - images/royalsuites.png
+  - images/logomono.png
+  - images/logotransp.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
