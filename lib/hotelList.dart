@@ -2,20 +2,20 @@ import 'package:flutter/material.dart';
 import 'GRDetails.dart';
 import 'RSDetails.dart';
 
-void main() => runApp(const HotelList());
+void main() => runApp(HotelList(name:''));
 
 final grandroyal = Image.asset(
-  'images/grandroyal.png',
+  'images/hotel2.png',
   fit: BoxFit.cover,
 );
 
 final royalsuites = Image.asset(
-  'images/royalsuites.png',
+  'images/hotel1.png',
   fit: BoxFit.cover,
 );
 
 final logomono = Image.asset(
-  'images/logomono.png',
+  'images/logobar.png',
   fit: BoxFit.cover,
 );
 
@@ -42,8 +42,8 @@ var stars2 = Row(
 );
 
 class HotelList extends StatelessWidget {
-  const HotelList({Key? key}) : super(key: key);
-
+  final String name;
+  HotelList({Key? key,required this.name}) : super(key: key);
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -71,7 +71,7 @@ class HotelList extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.all(15),
                   child:
-                  Text('Welcome!', style: TextStyle(fontSize: 18,),), // + name),
+                  Text('Welcome, ' + name + '!', style: TextStyle(fontSize: 18,),),
                 ),
                 Padding(
                   padding: EdgeInsets.all(15),
