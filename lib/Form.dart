@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'main.dart';
+import 'checkout.dart';
+import 'GRDetails.dart';
+import 'RSDetails.dart';
 
 
 void main() {
@@ -69,7 +71,7 @@ class _FormState extends State<SecondPage> {
               SizedBox(
                   width: 150,
                   child: ElevatedButton(onPressed: (){
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context)=>WelcomePage(name: _name.text, email: _email.text)));
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context)=> DetailsRS()));
                   },
                       style: ElevatedButton.styleFrom(
                           primary: Colors.black,
