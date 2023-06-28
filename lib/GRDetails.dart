@@ -3,15 +3,13 @@ import 'checkout.dart';
 import 'hotelList.dart';
 import 'Form.dart';
 
-void main() => runApp(DetailsGR(name: '',));
+void main() => runApp(DetailsGR());
 
 
 
 class DetailsGR extends StatefulWidget {
 
-  final String name;
-
-  const DetailsGR({Key? key, required this.name}) : super(key: key);
+  const DetailsGR({Key? key}) : super(key: key);
 
   @override
   State<DetailsGR> createState() => _DetailsGR2State();
@@ -20,7 +18,7 @@ class DetailsGR extends StatefulWidget {
 class _DetailsGR2State extends State<DetailsGR> {
 
   int _nights = 0;
-
+  //const _DetailsGR2State({Key? key, required this.name}) : super(key: key);
   void _incrementNights() {
     setState(() {
       _nights++;

@@ -89,27 +89,27 @@ class _FormState extends State<SecondPage> {
   }
 }
 
-class WelcomePage extends StatelessWidget {
-  String name,email;
-  WelcomePage({Key? key,required this.name,required this.email}) : super(key: key);
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Demo'),
-      ),
-      body: Center(
-        child: Center(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text('Name: $name'),
-              Text('Email: $email'),
-              //Text('Phone: $phone'),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
+// class WelcomePage extends StatelessWidget {
+//   String name,email;
+//   WelcomePage({Key? key,required this.name,required this.email}) : super(key: key);
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text('Demo'),
+//       ),
+//       body: Center(
+//         child: Center(
+//           child: Column(
+//             crossAxisAlignment: CrossAxisAlignment.start,
+//             children: [
+//               Text('Name: $name'),
+//               Text('Email: $email'),
+//               //Text('Phone: $phone'),
+//             ],
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
