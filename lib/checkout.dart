@@ -178,7 +178,7 @@ class MyHomePage extends StatelessWidget {
                       child:      
                         FilledButton(
                         onPressed: (){
-                          Navigator.of(context).push(MaterialPageRoute(builder: (context)=>MyApp()));
+                          Navigator.of(context).push(MaterialPageRoute(builder: (context)=>LandingPage()));
                          },
                         
                         style: const ButtonStyle(

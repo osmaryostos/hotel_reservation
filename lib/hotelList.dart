@@ -122,7 +122,7 @@ class HotelList extends StatelessWidget {
                     Text('C\$ 150,00',style: TextStyle(fontSize: 16,),),
                     ElevatedButton(
                       onPressed: (){
-                        Navigator.of(context).push(MaterialPageRoute(builder: (context)=> RSDetails()));
+                        Navigator.of(context).push(MaterialPageRoute(builder: (context)=> DetailsRS()));
                       },
                       child: Text('Select Hotel'),
                       style: ButtonStyle(
