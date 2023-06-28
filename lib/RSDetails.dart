@@ -1,10 +1,31 @@
+import 'package:contacts_login/hotelList.dart';
 import 'package:flutter/material.dart';
 import 'checkout.dart';
 
 void main() => runApp(DetailsRS());
 
-class DetailsRS extends StatelessWidget {
+class DetailsRS extends StatefulWidget {
   const DetailsRS({Key? key}) : super(key: key);
+
+  @override
+  State<DetailsRS> createState() => _DetailsRSState();
+}
+
+class _DetailsRSState extends State<DetailsRS> {
+
+  int _nights = 0;
+
+  void _incrementNights() {
+    setState(() {
+      _nights++;
+    });
+  }
+
+  void _decrementNights() {
+    setState(() {
+      _nights--;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -97,9 +118,17 @@ class DetailsRS extends StatelessWidget {
                                 child: SizedBox(
                                   width: 35,
                                   child: ElevatedButton(onPressed: (){
+                                    _decrementNights();
                                   },
-                                    child: Text('-'),
-                                    style: ButtonStyle(
+                                    child: Text('-',
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 40,
+                                      ),
+                                    ),
+                                    style: ElevatedButton.styleFrom(
+                                      primary: Colors.white70,
+                                      elevation: 0,
                                     ),
                                   ),
                                 ),
@@ -109,9 +138,9 @@ class DetailsRS extends StatelessWidget {
                           Column(
                             children: [
                               Container(
-                                padding: EdgeInsets.only(top: 5.0, left: 5.0),
+                                padding: EdgeInsets.only(top: 5.0, left: 10.0),
                                child: SizedBox(
-                                 child: Text(' 0', style: TextStyle(fontSize: 20.0),),
+                                 child: Text('$_nights', style: TextStyle(fontSize: 20.0),),
                                ),
                               )
                             ],
@@ -119,11 +148,21 @@ class DetailsRS extends StatelessWidget {
                           Column(
                             children: [
                               Container(
-                                padding: EdgeInsets.only(top: 5.0,left: 10.0),
+                                padding: EdgeInsets.only(top: 5.0,left: 0),
                                 child: SizedBox(
                                   width: 35,
                                   child: ElevatedButton(onPressed: (){
-                                  }, child: Text('+'),
+                                    _incrementNights();
+                                  }, child: Text('+',
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 30,
+                                    ),
+                                  ),
+                                    style: ElevatedButton.styleFrom(
+                                      primary: Colors.white70,
+                                      elevation: 0,
+                                    ),
                                   ),
                                 ),
                               )
@@ -169,7 +208,7 @@ class DetailsRS extends StatelessWidget {
                   child: SizedBox(
                     width: 200,
                     child: ElevatedButton(onPressed: (){
-
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context)=> HotelList(name: 'name')));
                     },
                       style: ElevatedButton.styleFrom(
                         primary: Colors.grey,

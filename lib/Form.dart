@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'checkout.dart';
 import 'GRDetails.dart';
 import 'RSDetails.dart';
+import 'hotelList.dart';
 
 
 void main() {
@@ -34,7 +35,7 @@ class SecondPage extends StatefulWidget {
 
 class _FormState extends State<SecondPage> {
   //Needs final?
-  TextEditingController _name = TextEditingController();
+  final TextEditingController _name = TextEditingController();
   TextEditingController _email = TextEditingController();
   //TextEditingController _phone = TextEditingController();
   @override
@@ -71,7 +72,7 @@ class _FormState extends State<SecondPage> {
               SizedBox(
                   width: 150,
                   child: ElevatedButton(onPressed: (){
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context)=> DetailsRS()));
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context)=> HotelList(name: _name.text)));
                   },
                       style: ElevatedButton.styleFrom(
                           primary: Colors.black,

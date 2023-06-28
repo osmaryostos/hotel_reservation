@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'RSDetails.dart';
+import 'GRDetails.dart';
 
-void main() => runApp(const HotelList());
+void main() => runApp(HotelList(name: '',));
 
 final grandroyal = Image.asset(
   'images/grandroyal.png',
@@ -41,7 +43,9 @@ var stars2 = Row(
 );
 
 class HotelList extends StatelessWidget {
-  const HotelList({Key? key}) : super(key: key);
+    final String name;
+
+  const HotelList({Key? key, required this.name}) : super(key: key);
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -62,7 +66,7 @@ class HotelList extends StatelessWidget {
         body: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Text('Welcome!'),
+            Text('Welcome, $name'),
             Text('Please, choose one of our hotels.'),
             Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -78,7 +82,7 @@ class HotelList extends StatelessWidget {
                 Text('C\$ 390,00'),
                 ElevatedButton(
                   onPressed: (){
-                    //Navigator.of(context).push(MaterialPageRoute(builder: (context)=>WelcomePage(name: _name.text, email: _email.text, phone: _phone.text)));
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context)=> DetailsGR(name: '',)));
                   },
                   child: Text('Select Hotel'),
                   style: ElevatedButton.styleFrom(
@@ -105,7 +109,7 @@ class HotelList extends StatelessWidget {
                 Text('C\$ 150,00'),
                 ElevatedButton(
                   onPressed: (){
-                    //Navigator.of(context).push(MaterialPageRoute(builder: (context)=>WelcomePage(name: _name.text, email: _email.text, phone: _phone.text)));
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context)=> DetailsRS()));
                   },
                   child: Text('Select Hotel'),
                   style: ButtonStyle(

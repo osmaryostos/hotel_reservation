@@ -1,5 +1,6 @@
 import 'package:contacts_login/main.dart';
 import 'package:flutter/material.dart';
+import 'main.dart';
 
 void main() {
   runApp(Detail1(name:''));
@@ -178,7 +179,7 @@ class MyHomePage extends StatelessWidget {
                       child:      
                         FilledButton(
                         onPressed: (){
-                          Navigator.of(context).push(MaterialPageRoute(builder: (context)=>MyApp()));
+                          Navigator.of(context).push(MaterialPageRoute(builder: (context)=>LandingPage()));
                          },
                         
                         style: const ButtonStyle(

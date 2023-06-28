@@ -1,11 +1,37 @@
 import 'package:flutter/material.dart';
 import 'checkout.dart';
+import 'hotelList.dart';
+import 'Form.dart';
 
-void main() => runApp(DetailsGR());
+void main() => runApp(DetailsGR(name: '',));
 
-class DetailsGR extends StatelessWidget {
-  const DetailsGR({Key? key}) : super(key: key);
 
+
+class DetailsGR extends StatefulWidget {
+
+  final String name;
+
+  const DetailsGR({Key? key, required this.name}) : super(key: key);
+
+  @override
+  State<DetailsGR> createState() => _DetailsGR2State();
+}
+
+class _DetailsGR2State extends State<DetailsGR> {
+
+  int _nights = 0;
+
+  void _incrementNights() {
+    setState(() {
+      _nights++;
+    });
+  }
+
+  void _decrementNights() {
+    setState(() {
+      _nights--;
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -25,7 +51,7 @@ class DetailsGR extends StatelessWidget {
               children: [
                 Container(
                   padding: EdgeInsets.only(top: 40.0),
-                  child: Text('Excellent Choice, ' + 'NAME', style: TextStyle(fontSize: 20.0),),
+                  child: Text('Excellent Choice, ', style: TextStyle(fontSize: 20.0),),
                 )],
             ),
             Row(
@@ -57,9 +83,9 @@ class DetailsGR extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  padding: EdgeInsets.only(top: 3.0),
+                    padding: EdgeInsets.only(top: 3.0),
                     child: Text('Grand Royal', style:
-                      TextStyle(fontSize: 18, fontFamily: 'Cinzel'),
+                    TextStyle(fontSize: 18, fontFamily: 'Cinzel'),
                     )
                 )],
             ),
@@ -69,51 +95,90 @@ class DetailsGR extends StatelessWidget {
                 Container(
 
                   padding: EdgeInsets.only(top: 20.0),
-                 child: Image.asset('images/hotel1.png', scale: 5.5,),
+                  child: Image.asset('images/hotel1.png', scale: 5.5,),
                 )],
             ),
             Row(
               children: [
-                Container(
-                  padding: EdgeInsets.only(top: 10.0, left: 35.0),
-                  child:
-                    Text('Number of Nights', style: TextStyle(fontSize: 18.0),),
+                Column(
+                  children: [
+                    Container(
+                      padding: EdgeInsets.only(top: 10.0, left: 35.0),
+                      child:
+                      Text('Number of Nights', style: TextStyle(fontSize: 18.0),),
+                    ),
+                  ],
                 ),
-                Container(
-                  color: Colors.grey,
-                  padding: EdgeInsets.only(top: 10.0, left: 30.0),
-                  child: Row(
-                    children: [
-                      Column(
-                        children: [
-                          SizedBox(
-                            child: ElevatedButton(onPressed: (){
+                Column(
+                  children: [
+                    Container(
 
-                            }, child: Text('-'),
-                            ),
-                          ),
-                        ],
-                      ),
-                      Column(
+                      width: 230.0,
+                      child: Row(
                         children: [
-                          SizedBox(
-                            child: Text(' 000'),
+                          Column(
+                            children: [
+                              Container(
+                                padding: EdgeInsets.only(top: 5.0, left: 105.0),
+                                child: SizedBox(
+                                  width: 35,
+                                  child: ElevatedButton(onPressed: (){
+                                    _decrementNights();
+                                  },
+                                    child: Text('-',
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 40,
+                                      ),
+                                    ),
+                                    style: ElevatedButton.styleFrom(
+                                      primary: Colors.white70,
+                                      elevation: 0,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
-                        ],
-                      ),
-                      Column(
-                        children: [
-                          SizedBox(
-                            child: ElevatedButton(onPressed: (){
-
-                            }, child: Text('+'),
-                            ),
+                          Column(
+                            children: [
+                              Container(
+                                padding: EdgeInsets.only(top: 5.0, left: 10.0),
+                                child: SizedBox(
+                                  child: Text('$_nights', style: TextStyle(fontSize: 20.0),),
+                                ),
+                              )
+                            ],
+                          ),
+                          Column(
+                            children: [
+                              Container(
+                                padding: EdgeInsets.only(top: 5.0,left: 0),
+                                child: SizedBox(
+                                  width: 35,
+                                  child: ElevatedButton(onPressed: (){
+                                    _incrementNights();
+                                  }, child: Text('+',
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 30,
+                                  ),
+                                  ),
+                                    style: ElevatedButton.styleFrom(
+                                      primary: Colors.white70,
+                                      elevation: 0,
+                                  ),
+                                ),
+                              )
+                              )
+                            ],
                           )
                         ],
-                      )
-                    ],
-                  ),
-                )
+                      ),
+                    )
+                  ],
+                ),
+
               ],
             ),
             Row(
@@ -147,7 +212,7 @@ class DetailsGR extends StatelessWidget {
                   child: SizedBox(
                     width: 200,
                     child: ElevatedButton(onPressed: (){
-
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context)=> HotelList(name: '')));
                     },
                       style: ElevatedButton.styleFrom(
                         primary: Colors.grey,
@@ -169,3 +234,4 @@ class DetailsGR extends StatelessWidget {
     );
   }
 }
+
