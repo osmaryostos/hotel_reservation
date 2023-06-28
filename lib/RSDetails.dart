@@ -46,7 +46,7 @@ class _DetailsRSState extends State<DetailsRS> {
               children: [
                 Container(
                   padding: EdgeInsets.only(top: 40.0),
-                  child: Text('Excellent Choice, ' + 'NAME', style: TextStyle(fontSize: 20.0),),
+                  child: Text('Excellent Choice!', style: TextStyle(fontSize: 20.0),),
                 )],
             ),
             Row(

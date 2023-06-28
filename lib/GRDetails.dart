@@ -49,7 +49,7 @@ class _DetailsGR2State extends State<DetailsGR> {
               children: [
                 Container(
                   padding: EdgeInsets.only(top: 40.0),
-                  child: Text('Excellent Choice, ', style: TextStyle(fontSize: 20.0),),
+                  child: Text('Excellent Choice! ', style: TextStyle(fontSize: 20.0),),
                 )],
             ),
             Row(
