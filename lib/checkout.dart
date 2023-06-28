@@ -2,13 +2,14 @@ import 'package:contacts_login/main.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(Detail1(name:''));
+  runApp(Detail1(name:'', nigths:1,));
 }
 
 class Detail1 extends StatelessWidget {
   final String name;
+  final int nigths;
   double price=0, tax =0, total= 0;
-  Detail1({Key? key,required this.name}) : super(key: key);   
+  Detail1({Key? key,required this.name,required this.nigths}) : super(key: key);   
 
   @override
   Widget build(BuildContext context) {
@@ -17,15 +18,16 @@ class Detail1 extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.grey,
       ),
-      home: MyHomePage(name:this.name),
+      home: MyHomePage(name:this.name, nigths: this.nigths,),
     );
   }
 }
 
 class MyHomePage extends StatelessWidget {
   final String name;
+  final int nigths;
   double price=0, tax =0, total= 0;
-  MyHomePage({Key? key,required this.name}) : super(key: key); 
+  MyHomePage({Key? key,required this.name, required this.nigths}) : super(key: key); 
 
   @override
   Widget build(BuildContext context) {
