@@ -3,13 +3,15 @@ import 'checkout.dart';
 import 'hotelList.dart';
 import 'Form.dart';
 
-void main() => runApp(DetailsGR());
+void main() => runApp(DetailsGR(name: '',));
 
 
 
 class DetailsGR extends StatefulWidget {
 
-  const DetailsGR({Key? key}) : super(key: key);
+  final String name;
+
+  const DetailsGR({Key? key, required this.name}) : super(key: key);
 
   @override
   State<DetailsGR> createState() => _DetailsGR2State();
@@ -18,7 +20,7 @@ class DetailsGR extends StatefulWidget {
 class _DetailsGR2State extends State<DetailsGR> {
 
   int _nights = 0;
-  //const _DetailsGR2State({Key? key, required this.name}) : super(key: key);
+
   void _incrementNights() {
     setState(() {
       _nights++;
@@ -49,7 +51,7 @@ class _DetailsGR2State extends State<DetailsGR> {
               children: [
                 Container(
                   padding: EdgeInsets.only(top: 40.0),
-                  child: Text('Excellent Choice! ', style: TextStyle(fontSize: 20.0),),
+                  child: Text('Excellent Choice, ', style: TextStyle(fontSize: 20.0),),
                 )],
             ),
             Row(
@@ -101,7 +103,7 @@ class _DetailsGR2State extends State<DetailsGR> {
                 Column(
                   children: [
                     Container(
-                      padding: EdgeInsets.only(top: 10.0, left: 35.0),
+                      padding: EdgeInsets.only(top: 10.0, left: 15.0),
                       child:
                       Text('Number of Nights', style: TextStyle(fontSize: 18.0),),
                     ),
@@ -187,7 +189,7 @@ class _DetailsGR2State extends State<DetailsGR> {
                   child: SizedBox(
                     width: 200,
                     child: ElevatedButton(onPressed: (){
-                      Navigator.of(context).push(MaterialPageRoute(builder: (context)=> Detail1(name: 'hotel1')));
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context)=> Detail1(name: 'hotel1', nigths: 3,)));
                     },
                       style: ElevatedButton.styleFrom(
                         primary: Colors.black,
@@ -210,7 +212,7 @@ class _DetailsGR2State extends State<DetailsGR> {
                   child: SizedBox(
                     width: 200,
                     child: ElevatedButton(onPressed: (){
-                      Navigator.of(context).push(MaterialPageRoute(builder: (context)=> HotelList(name: '')));
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context)=> HotelList(name: '',)));
                     },
                       style: ElevatedButton.styleFrom(
                         primary: Colors.grey,

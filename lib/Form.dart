@@ -47,7 +47,7 @@ class _FormState extends State<SecondPage> {
             children: [
               Padding(
                 padding: const EdgeInsets.only(bottom: 10.0),
-                child: Image.asset('assets/images/Logo Royal - Color-2.png', scale: 1.5,),
+                child: Image.asset('images/biglogo.png', scale: 1.5,),
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),

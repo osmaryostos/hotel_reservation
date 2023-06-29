@@ -2,45 +2,51 @@ import 'package:contacts_login/main.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(Detail1(name:''));
+  
+  runApp(Detail1(name:'', nigths:1,));
 }
 
 class Detail1 extends StatelessWidget {
   final String name;
-  double price=0, tax =0, total= 0;
-  Detail1({Key? key,required this.name}) : super(key: key);   
+  final int nigths;
+  int price=0, tax =0, total= 0;
+  Detail1({Key? key,required this.name,required this.nigths}) : super(key: key);   
 
   @override
   Widget build(BuildContext context) {
+    print('nigh' + nigths.toString());
     return MaterialApp(
       title: 'GRAND HOTEL',
       theme: ThemeData(
         primarySwatch: Colors.grey,
       ),
-      home: MyHomePage(name:this.name),
+      home: MyHomePage(name:this.name, nigths: this.nigths,),
     );
   }
 }
 
 class MyHomePage extends StatelessWidget {
   final String name;
-  double price=0, tax =0, total= 0;
-  MyHomePage({Key? key,required this.name}) : super(key: key); 
+  final int nigths;
+  int price=0;
+  double tax =0,  total= 0;
+  MyHomePage({Key? key,required this.name, required this.nigths}) : super(key: key); 
 
   @override
   Widget build(BuildContext context) {
+      print('nigth' + nigths.toString());
      String title;
      String image1;
     if (name == 'hotel1') { 
      image1='hotel1.png';
      title='GRAND HOTEL';
-     price=780;
-     tax =117;
+     price=780*nigths;
+     tax =(price*0.15) ;
    } else { 
      image1='hotel2.png';
      title='LUXURY HOTEL';
-     price=880;
-     tax =177;
+     price=880*nigths;
+     tax =price * 0.15  ;
    } 
    total = price + tax;
    return Scaffold(
@@ -128,8 +134,8 @@ class MyHomePage extends StatelessWidget {
                       text: TextSpan(
                         text: '+ C\$ $price',
                         style: const TextStyle(fontSize: 14, color: Colors.black, fontWeight: FontWeight.bold),
-                        children: const <TextSpan>[
-                          TextSpan(text: '/ 2 Nights ', style: TextStyle( fontWeight: FontWeight.normal)),
+                        children:  <TextSpan>[
+                          TextSpan(text: '/ $nigths Nights ', style: TextStyle( fontWeight: FontWeight.normal)),
                         ],
                       ),
                     )
@@ -144,7 +150,7 @@ class MyHomePage extends StatelessWidget {
                         
                         ),
                       ),
-                      padding: EdgeInsets.only(top: 10.0, bottom: 10.0, left: 30.0, right: 40.0),
+                      padding: EdgeInsets.only(top: 10.0, bottom: 10.0, left: 38.0, right: 40.0),
                       child:  RichText(
                       text: TextSpan(
                         text: '+ C\$ $tax',
@@ -163,11 +169,11 @@ class MyHomePage extends StatelessWidget {
                       padding: EdgeInsets.only( top: 10.0, left: 40.0),
                       child:
                       RichText(
-                      text: const TextSpan(
+                      text:  TextSpan(
                         text: 'TOTAL ',
                         style: TextStyle(fontSize: 14, color: Colors.black),
                         children: <TextSpan>[
-                          TextSpan(text: 'C\$ 897', style: TextStyle( fontWeight: FontWeight.bold)),
+                          TextSpan(text: 'C\$ $total', style: TextStyle( fontWeight: FontWeight.bold)),
                         ],
                       ),
                     )

@@ -185,7 +185,7 @@ class _DetailsRSState extends State<DetailsRS> {
                   child: SizedBox(
                     width: 200,
                     child: ElevatedButton(onPressed: (){
-                      Navigator.of(context).push(MaterialPageRoute(builder: (context)=> Detail1(name: 'hotel2')));
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context)=> Detail1(name: 'hotel2', nigths: 2,)));
                     },
                       style: ElevatedButton.styleFrom(
                         primary: Colors.black,

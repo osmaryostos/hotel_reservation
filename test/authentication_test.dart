@@ -11,7 +11,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 
 void main() {
-  testWidgets('Checkout Hotel Luxury widgets', (WidgetTester tester) async {
+  testWidgets('login password form test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
     await tester.pumpWidget(
        MaterialApp(

@@ -11,10 +11,10 @@ import 'package:flutter_test/flutter_test.dart';
 
 
 void main() {
-  testWidgets('Checkout Hotel Luxury widgets', (WidgetTester tester) async {
+  testWidgets('List Hotel Luxury widgets', (WidgetTester tester) async {
     // Build our app and trigger a frame.
     await tester.pumpWidget(
-       const HotelList()
+        HotelList(name: 'test',)
     );
     // Verify textS AND button
      final button = find.byType(ElevatedButton);
