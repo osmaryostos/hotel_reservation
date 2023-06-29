@@ -5,36 +5,37 @@
 // gestures. You can also use WidgetTester to find child widgets in the widget
 // tree, read text, and verify that the values of widget properties are correct.
 
-import 'package:contacts_login/checkout.dart';
+import 'package:contacts_login/GRDetails.dart';
+import 'package:contacts_login/RSDetails.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 
 void main() {
-  testWidgets('Checkout Hotel Luxury widgets', (WidgetTester tester) async {
+  testWidgets('Detail Hotel Luxury widgets', (WidgetTester tester) async {
     // Build our app and trigger a frame.
     await tester.pumpWidget(
        MaterialApp(
-      home: MyHomePage(name:'hotel1', nigths: 2, ))
+      home: DetailsGR(name:'test' ))
     );
     // Verify text
-    final button = find.byType(FilledButton);
-    expect(find.text('CHECKOUT'), findsOneWidget);
-    expect(find.text('GRAND HOTEL'), findsOneWidget);
-    expect(button, findsOneWidget);
+    final button = find.byType(ElevatedButton);
+    expect(find.text('Number of Nights'), findsOneWidget);
+    expect(find.text('Excellent Choice, '), findsOneWidget);
+    expect(button, findsWidgets);
 
    });
-  testWidgets('Chekout Hotel Another widgets', (WidgetTester tester) async {
+  testWidgets('Detail Hotel Another widgets', (WidgetTester tester) async {
     // Build our app and trigger a frame.
     await tester.pumpWidget(
        MaterialApp(
-      home: MyHomePage(name:'hotel2', nigths: 2, ))
+      home: DetailsRS())
     );
     // Verify text
-    final button = find.byType(FilledButton);
-    expect(find.text('CHECKOUT'), findsOneWidget);
-    expect(find.text('LUXURY HOTEL'), findsOneWidget);
-    expect(button, findsOneWidget);
+    final button = find.byType(ElevatedButton);
+    expect(find.text('Excellent Choice!'), findsOneWidget);
+    expect(find.text('Royal Suites'), findsOneWidget);
+    expect(button, findsWidgets);
 
 
    });

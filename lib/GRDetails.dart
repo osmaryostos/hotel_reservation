@@ -103,7 +103,7 @@ class _DetailsGR2State extends State<DetailsGR> {
                 Column(
                   children: [
                     Container(
-                      padding: EdgeInsets.only(top: 10.0, left: 35.0),
+                      padding: EdgeInsets.only(top: 10.0, left: 15.0),
                       child:
                       Text('Number of Nights', style: TextStyle(fontSize: 18.0),),
                     ),

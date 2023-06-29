@@ -19,7 +19,7 @@ class LandingPage extends StatelessWidget {
             children: [
         Padding(
         padding: const EdgeInsets.only(bottom: 10.0),
-        child: Image.asset('assets/images/Logo Royal - Color-2.png', scale: 1.5,),
+        child: Image.asset('images/biglogo.png', scale: 1.5,),
       ),
               Builder(
                   builder: (context) {
